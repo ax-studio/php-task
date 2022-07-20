@@ -6,31 +6,22 @@ Celem zadania jest stworzenie REST API używając frameworka [Laravel](https://l
 
 ### Endpointy
 
-Zwraca wykres liniowy na którym prezentowany jest tygodniowy rozkład temperatury z ostatnich 7 dni.
-Przyjmuje paramerty:
- - `city` - miasto dla którego wyświetli się temperatura, domyślnie `Gdańsk`
-```
-/weekly?city={CITY_NAME},currency={CURRENCY}
-```
-
 Zwraca wykres liniowy na którym prezentowany jest dzienny kurs średni zdefiniowanej waluty z ostatnich 7 dni.
 Przyjmuje paramerty:
- - `currency` - waluta, której będzie wyświetlony kurs, domyślnie `Euro`
+ - `currency` - waluta, która będzie prezentowana, domyślnie `Euro`
 ```
-/weekly/currency?city={CITY_NAME},currency={CURRENCY}
+/weekly/currency/{CURRENCY}
 ```
 
-Zwraca wykres liniowy na którym prezentowana jest temperatura oraz dzienny kurs średni zdefiniowanej waluty z ostatnich 7 dni.
+Zwraca wykres liniowy na którym prezentowana są dzienne kury średnie zdefiniowanych walut z ostatnich 7 dni.
 Przyjmuje paramerty:
- - `city` - miasto dla którego wyświetli się temperatura, domyślnie `Gdańsk`
- - `currency` - waluta, której będzie wyświetlony kurs, domyślnie `Euro`
+ - `currencies` - waluty, które będa prezentowane, domyślnie `Euro`
 ```
-/weekly/weather?city={CITY_NAME},currency={CURRENCY}
+/weekly/?currencies={CURRENCY1}:{CURRENCY2}
 ```
 
 ### Źródła danych
 
-- Źródło danych pogodowych https://openweathermap.org/history
 - Źródło danych kursów walut http://api.nbp.pl/
 - API rysujące wykresy https://documentation.image-charts.com/line-charts/
 
